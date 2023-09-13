@@ -1,28 +1,31 @@
 import _ from 'lodash';
 import './style.css';
 import svgLogo from './images/logo.svg';
-import printMe from './print.js';
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+const mainContainer = document.createElement('main');
+const calculatorContainer = document.createElement('div');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+//logo
 
-  //add logo
-  const logo = new Image();
-  logo.src = svgLogo;
+const logo = new Image();
+logo.src = svgLogo;
 
-  element.appendChild(logo);
+//inputSection
 
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
+const inputContainer = document.createElement('div');
 
-  element.appendChild(btn);
+const billContainer = document.createElement('div');
+const tipContainer = document.createElement('div');
+const numPeopleContainer = document.createElement('div');
 
-  return element;
-}
+inputContainer.appendChild(billContainer);
+inputContainer.appendChild(tipContainer);
+inputContainer.appendChild(numPeopleContainer);
 
-document.body.appendChild(component());
+calculatorContainer.appendChild(inputContainer);
+
+// Main Append
+mainContainer.append(logo);
+mainContainer.appendChild(calculatorContainer);
+
+document.body.appendChild(mainContainer);
