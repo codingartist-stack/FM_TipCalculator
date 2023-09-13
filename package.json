@@ -1,0 +1,27 @@
+{
+  "name": "fm_tipcalculator",
+  "version": "1.0.0",
+  "description": "FM Tip Calculator - Jr Project",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codingartist-stack/FM_TipCalculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codingartist-stack/FM_TipCalculator/issues"
+  },
+  "homepage": "https://github.com/codingartist-stack/FM_TipCalculator#readme",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
