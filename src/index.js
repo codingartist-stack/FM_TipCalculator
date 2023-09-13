@@ -33,15 +33,19 @@ const billLabel = document.createElement('label');
 billLabel.innerText = 'Bill';
 billLabel.setAttribute('for', 'bill');
 
+const billInputDiv = document.createElement('div');
+billInputDiv.classList.add('inputDiv');
+
 const billInput = document.createElement('input');
 billInput.setAttribute('placeholder', '0');
 billInput.name = 'bill';
 billInput.id = 'bill';
 
-billContainer.appendChild(billLabel);
-billContainer.appendChild(billInput);
-billContainer.appendChild(dollarSign);
+billInputDiv.appendChild(billInput);
+billInputDiv.appendChild(dollarSign);
 
+billContainer.appendChild(billLabel);
+billContainer.appendChild(billInputDiv);
 //Tip
 
 const tipContainer = document.createElement('div');
@@ -51,6 +55,8 @@ const numPeopleContainer = document.createElement('div');
 numPeopleContainer.classList.add('numPeopleContainer');
 
 const labelErrorDiv = document.createElement('div');
+const peopleInputDiv = document.createElement('div');
+peopleInputDiv.classList.add('inputDiv');
 
 const peopleLabel = document.createElement('label');
 peopleLabel.innerText = 'Number of People';
@@ -66,9 +72,11 @@ peopleInput.id = 'people';
 labelErrorDiv.appendChild(peopleLabel);
 labelErrorDiv.appendChild(errorSpan);
 
+peopleInputDiv.appendChild(peopleInput);
+peopleInputDiv.appendChild(iconPerson);
+
 numPeopleContainer.appendChild(labelErrorDiv);
-numPeopleContainer.appendChild(peopleInput);
-numPeopleContainer.appendChild(iconPerson);
+numPeopleContainer.appendChild(peopleInputDiv);
 
 //Input Container append
 inputContainer.appendChild(billContainer);
