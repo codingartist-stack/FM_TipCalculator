@@ -9,6 +9,7 @@
   --clr-neutral800: hsl(183, 100%, 15%);
 
   --fontFamily-main: 'SpaceMono-Regular', 'Courier New', Courier, monospace;
+  --fontFamily-Bold: 'SpaceMono-Bold', 'Courier New', Courier, monospace;
 }
 
 @font-face {
@@ -104,4 +105,46 @@ h6 {
 body {
   background-color: var(--clr-neutral300);
   font-family: var(--fontFamily-main);
+}
+
+form {
+  background-color: var(--clr-neutralWhite);
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+label {
+  color: var(--clr-neutral500);
+  font-family: var(--fontFamily-Bold);
+}
+
+.inputDiv,
+.customPercent {
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  background-color: var(--clr-neutral300);
+  border-radius: 5px;
+  border: none;
+}
+
+.customPercent {
+  text-align: right;
+}
+
+.numberInput {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  text-align: right;
+  color: var(--clr-neutral800);
+  max-width: 80%;
+}
+
+input::placeholder {
+  color: var(--clr-neutral400);
 }

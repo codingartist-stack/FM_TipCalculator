@@ -38,6 +38,8 @@ billInputDiv.classList.add('inputDiv');
 
 const billInput = document.createElement('input');
 billInput.setAttribute('placeholder', '0');
+billInput.classList.add('numberInput');
+billInput.type = 'number';
 billInput.name = 'bill';
 billInput.id = 'bill';
 
@@ -46,9 +48,64 @@ billInputDiv.appendChild(dollarSign);
 
 billContainer.appendChild(billLabel);
 billContainer.appendChild(billInputDiv);
-//Tip
 
+//Tip
 const tipContainer = document.createElement('div');
+
+const tipLabel = document.createElement('label');
+tipLabel.innerText = 'Select Tip %';
+
+const buttonContainer = document.createElement('div');
+
+const fivePercent = document.createElement('input');
+fivePercent.classList.add('percentBtn');
+fivePercent.type = 'button';
+fivePercent.name = 'fivePercent';
+fivePercent.id = 'fivePercent';
+fivePercent.value = '5%';
+
+const tenPercent = document.createElement('input');
+tenPercent.classList.add('percentBtn');
+tenPercent.type = 'button';
+tenPercent.name = 'tenPercent';
+tenPercent.id = 'tenPercent';
+tenPercent.value = '10%';
+
+const fifteenPercent = document.createElement('input');
+fifteenPercent.classList.add('percentBtn');
+fifteenPercent.type = 'button';
+fifteenPercent.name = 'fifteenPercent';
+fifteenPercent.id = 'fifteenPercent';
+fifteenPercent.value = '15%';
+
+const twentyPercent = document.createElement('input');
+twentyPercent.classList.add('percentBtn');
+twentyPercent.type = 'button';
+twentyPercent.name = 'twentyPercent';
+twentyPercent.id = 'twentyPercent';
+twentyPercent.value = '20%';
+
+const fiftyPercent = document.createElement('input');
+fiftyPercent.classList.add('percentBtn');
+fiftyPercent.type = 'button';
+fiftyPercent.name = 'fiftyPercent';
+fiftyPercent.id = 'fiftyPercent';
+fiftyPercent.value = '50%';
+
+const customPercent = document.createElement('input');
+customPercent.type = 'number';
+customPercent.classList.add('customPercent');
+customPercent.setAttribute('placeholder', 'Custom');
+
+buttonContainer.appendChild(fivePercent);
+buttonContainer.appendChild(tenPercent);
+buttonContainer.appendChild(fifteenPercent);
+buttonContainer.appendChild(twentyPercent);
+buttonContainer.appendChild(fiftyPercent);
+buttonContainer.appendChild(customPercent);
+
+tipContainer.appendChild(tipLabel);
+tipContainer.appendChild(buttonContainer);
 
 //Number of people
 const numPeopleContainer = document.createElement('div');
@@ -63,9 +120,13 @@ peopleLabel.innerText = 'Number of People';
 peopleLabel.setAttribute('for', 'people');
 
 const errorSpan = document.createElement('span');
+errorSpan.classList.add('errorMessage');
+errorSpan.id = 'errorSpan';
 
 const peopleInput = document.createElement('input');
 peopleInput.setAttribute('placeholder', '0');
+peopleInput.classList.add('numberInput');
+peopleInput.type = 'number';
 peopleInput.name = 'people';
 peopleInput.id = 'people';
 
