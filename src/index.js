@@ -1,3 +1,13 @@
 import _ from 'lodash';
+import './style.css';
 
-console.log('Hello! I am connected');
+function testElement() {
+  const element = document.createElement('div');
+
+  element.innerText = 'testing CSS';
+  element.classList.add('hello');
+
+  return element;
+}
+
+document.body.appendChild(testElement());
