@@ -7,6 +7,8 @@
   --clr-neutral400: hsl(184, 14%, 56%);
   --clr-neutral500: hsl(186, 14%, 43%);
   --clr-neutral800: hsl(183, 100%, 15%);
+
+  --fontFamily-main: 'SpaceMono-Regular', 'Courier New', Courier, monospace;
 }
 
 @font-face {
@@ -101,4 +103,5 @@ h6 {
 /* UTILITIES */
 body {
   background-color: var(--clr-neutral300);
+  font-family: var(--fontFamily-main);
 }
