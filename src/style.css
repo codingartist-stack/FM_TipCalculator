@@ -154,10 +154,6 @@ input {
   font-family: var(--fontFamily-Bold);
 }
 
-input:focus {
-  outline: 2px solid var(--clr-primary300);
-}
-
 .inputDiv {
   display: grid;
   width: 100%;
@@ -181,6 +177,11 @@ input:focus {
   width: 100%;
 }
 
+.customPercent:focus,
+.numberInput:focus {
+  outline: 2px solid var(--clr-primary300);
+}
+
 .icon {
   position: absolute;
   top: 35%;
@@ -189,6 +190,11 @@ input:focus {
 
 input::placeholder {
   color: var(--clr-neutral400);
+}
+
+.percentBtn:focus {
+  background-color: var(--clr-neutral300);
+  color: var(--clr-neutral800);
 }
 
 .labelErrorDiv {

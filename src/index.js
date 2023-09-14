@@ -161,10 +161,16 @@ peopleInputDiv.appendChild(peopleInput);
 peopleInputDiv.appendChild(iconPerson);
 
 peopleInput.addEventListener('input', (e) => {
-  if (peopleInput.value < 1) {
+  let bill = billInput.value;
+  let numOfPeople = peopleInput.value;
+
+  if (numOfPeople < 1) {
     errorSpan.innerText = `Can't be zero`;
     peopleInput.classList.add('errorBorder');
     return;
+  } else {
+    errorSpan.innerText = '';
+    peopleInput.classList.remove('errorBorder');
   }
   if (bill == '') {
     console.log('hmm...');
