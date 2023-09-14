@@ -57,51 +57,29 @@ tipLabel.innerText = 'Select Tip %';
 
 const buttonContainer = document.createElement('div');
 
-const fivePercent = document.createElement('input');
-fivePercent.classList.add('percentBtn');
-fivePercent.type = 'button';
-fivePercent.name = 'fivePercent';
-fivePercent.id = 'fivePercent';
-fivePercent.value = '5%';
+//Create Percent buttons
+function createPercent(percent, numPercent) {
+  percent = document.createElement('input');
+  percent.classList.add('percentBtn');
+  percent.type = 'button';
+  percent.name = percent;
+  percent.id = percent;
+  percent.value = numPercent;
 
-const tenPercent = document.createElement('input');
-tenPercent.classList.add('percentBtn');
-tenPercent.type = 'button';
-tenPercent.name = 'tenPercent';
-tenPercent.id = 'tenPercent';
-tenPercent.value = '10%';
+  buttonContainer.appendChild(percent);
+}
 
-const fifteenPercent = document.createElement('input');
-fifteenPercent.classList.add('percentBtn');
-fifteenPercent.type = 'button';
-fifteenPercent.name = 'fifteenPercent';
-fifteenPercent.id = 'fifteenPercent';
-fifteenPercent.value = '15%';
-
-const twentyPercent = document.createElement('input');
-twentyPercent.classList.add('percentBtn');
-twentyPercent.type = 'button';
-twentyPercent.name = 'twentyPercent';
-twentyPercent.id = 'twentyPercent';
-twentyPercent.value = '20%';
-
-const fiftyPercent = document.createElement('input');
-fiftyPercent.classList.add('percentBtn');
-fiftyPercent.type = 'button';
-fiftyPercent.name = 'fiftyPercent';
-fiftyPercent.id = 'fiftyPercent';
-fiftyPercent.value = '50%';
+createPercent('fivePercent', '5%');
+createPercent('tenPercent', '10%');
+createPercent('fifteenPercent', '15%');
+createPercent('twentyPercent', '20%');
+createPercent('fiftyPercent', '50%');
 
 const customPercent = document.createElement('input');
 customPercent.type = 'number';
 customPercent.classList.add('customPercent');
 customPercent.setAttribute('placeholder', 'Custom');
 
-buttonContainer.appendChild(fivePercent);
-buttonContainer.appendChild(tenPercent);
-buttonContainer.appendChild(fifteenPercent);
-buttonContainer.appendChild(twentyPercent);
-buttonContainer.appendChild(fiftyPercent);
 buttonContainer.appendChild(customPercent);
 
 tipContainer.appendChild(tipLabel);
@@ -145,6 +123,9 @@ inputContainer.appendChild(tipContainer);
 inputContainer.appendChild(numPeopleContainer);
 
 calculatorContainer.appendChild(inputContainer);
+
+//resultContainer
+const resultContainer = document.createElement('div');
 
 // Main Append
 mainContainer.append(logo);
