@@ -107,7 +107,7 @@ body {
   font-family: var(--fontFamily-main);
 }
 
-form {
+main {
   background-color: var(--clr-neutralWhite);
   padding: 1rem;
   border-radius: 20px;

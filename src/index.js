@@ -23,6 +23,7 @@ iconPerson.src = personIcon;
 
 const inputContainer = document.createElement('div');
 inputContainer.classList.add('inputContainer');
+inputContainer.classList.add('gridGroup');
 
 //Bill
 
@@ -51,11 +52,13 @@ billContainer.appendChild(billInputDiv);
 
 //Tip
 const tipContainer = document.createElement('div');
+tipContainer.classList.add('tipContainer');
 
 const tipLabel = document.createElement('label');
 tipLabel.innerText = 'Select Tip %';
 
 const buttonContainer = document.createElement('div');
+buttonContainer.classList.add('buttonContainer');
 
 //Create Percent buttons
 function createPercent(percent, numPercent) {
@@ -126,9 +129,24 @@ calculatorContainer.appendChild(inputContainer);
 
 //resultContainer
 const resultContainer = document.createElement('div');
+resultContainer.classList.add('resultContainer');
+resultContainer.classList.add('gridGroup');
+
+const tipAmountContainer = document.createElement('div');
+tipAmountContainer.classList.add('tipAmountContainer');
+tipAmountContainer.classList.add('flexGroup');
+
+const tipAmount = document.createElement('p');
+tipAmount.innerText = 'Tip Amount';
+
+tipAmountContainer.appendChild(tipAmount);
+
+resultContainer.appendChild(tipAmountContainer);
 
 // Main Append
-mainContainer.append(logo);
-mainContainer.appendChild(calculatorContainer);
 
+mainContainer.appendChild(calculatorContainer);
+mainContainer.appendChild(resultContainer);
+
+document.body.append(logo);
 document.body.appendChild(mainContainer);
