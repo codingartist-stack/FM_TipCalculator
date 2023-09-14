@@ -74,14 +74,18 @@ function createPercent(percent, numPercent) {
   percent.id = percent;
   percent.value = numPercent;
 
+  percent.setAttribute('data-selected', false);
+
   buttonContainer.appendChild(percent);
 
   percent.addEventListener('click', (e) => {
     let bill = billInput.value;
-    console.log(bill);
     let selectedPercent = parseInt(e.target.value) / 100;
     let numOfPeople = peopleInput.value;
-
+    if (bill == '') {
+      console.log('hmm...');
+      return;
+    }
     if (numOfPeople == '') {
       numOfPeople = 1;
       peopleInput.value = 1;
@@ -101,6 +105,19 @@ const customPercent = document.createElement('input');
 customPercent.type = 'number';
 customPercent.classList.add('customPercent');
 customPercent.setAttribute('placeholder', 'Custom');
+
+customPercent.addEventListener('input', (e) => {
+  let bill = billInput.value;
+  let selectedPercent = parseInt(customPercent.value) / 100;
+  let numOfPeople = peopleInput.value;
+
+  if (numOfPeople == '') {
+    numOfPeople = 1;
+    peopleInput.value = 1;
+  }
+
+  calculateTipTotal(bill, selectedPercent, numOfPeople);
+});
 
 buttonContainer.appendChild(customPercent);
 
@@ -135,6 +152,12 @@ labelErrorDiv.appendChild(errorSpan);
 
 peopleInputDiv.appendChild(peopleInput);
 peopleInputDiv.appendChild(iconPerson);
+
+function notZero() {
+  if (peopleInput > 1) {
+    errorSpan.innerText = `Can't be zero`;
+  }
+}
 
 numPeopleContainer.appendChild(labelErrorDiv);
 numPeopleContainer.appendChild(peopleInputDiv);
@@ -212,6 +235,8 @@ resultContainer.appendChild(resetBtn);
 
 function resetForm() {
   calculatorContainer.reset();
+  personTotal.innerText = '$0.00';
+  total.innerText = '$0.00';
 }
 
 resetBtn.addEventListener('click', resetForm);
