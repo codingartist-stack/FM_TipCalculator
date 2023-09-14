@@ -195,6 +195,12 @@ resetBtn.classList.add('resetBtn');
 
 resultContainer.appendChild(resetBtn);
 
+function resetForm() {
+  calculatorContainer.reset();
+}
+
+resetBtn.addEventListener('click', resetForm);
+
 // Main Append
 mainContainer.appendChild(calculatorContainer);
 mainContainer.appendChild(resultContainer);
