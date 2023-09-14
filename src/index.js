@@ -75,6 +75,20 @@ function createPercent(percent, numPercent) {
   percent.value = numPercent;
 
   buttonContainer.appendChild(percent);
+
+  percent.addEventListener('click', (e) => {
+    let bill = billInput.value;
+    console.log(bill);
+    let selectedPercent = parseInt(e.target.value) / 100;
+    let numOfPeople = peopleInput.value;
+
+    if (numOfPeople == '') {
+      numOfPeople = 1;
+      peopleInput.value = 1;
+    }
+
+    calculateTipTotal(bill, selectedPercent, numOfPeople);
+  });
 }
 
 createPercent('fivePercent', '5%');
@@ -155,7 +169,7 @@ perPerson.innerText = '/ person';
 personTitle.appendChild(personTip);
 personTitle.appendChild(perPerson);
 
-const personTotal = document.createElement('div');
+export const personTotal = document.createElement('div');
 personTotal.classList.add('total');
 personTotal.innerText = '$0.00';
 
@@ -177,7 +191,7 @@ perPersonTotal.innerText = '/ person';
 totalTitle.appendChild(totalLabel);
 totalTitle.appendChild(perPersonTotal);
 
-const total = document.createElement('div');
+export const total = document.createElement('div');
 total.classList.add('total');
 total.innerText = '$0.00';
 
