@@ -3,20 +3,13 @@ import './style.css';
 import svgLogo from './images/logo.svg';
 import dollarIcon from './images/icon-dollar.svg';
 import personIcon from './images/icon-person.svg';
+import calculateTipTotal from './calculateTipTotal';
 
 const mainElement = document.createElement('main');
 const mainContainer = document.createElement('div');
 mainContainer.classList.add('mainContainer');
 const calculatorContainer = document.createElement('form');
 calculatorContainer.classList.add('calculatorContainer');
-
-//global var
-
-let bill;
-let selectedPercent;
-let numOfPeople;
-let tip;
-let tipPerPerson;
 
 //images
 
@@ -80,26 +73,6 @@ function createPercent(percent, numPercent) {
   percent.name = percent;
   percent.id = percent;
   percent.value = numPercent;
-
-  percent.addEventListener('click', (e) => {
-    selectedPercent = numPercent;
-    console.log(e.target.value);
-    bill = billInput.value;
-    numOfPeople = peopleInput.value;
-
-    tip = bill * (parseInt(e.target.value) / 100);
-
-    if (numOfPeople == undefined) {
-      numOfPeople = '1';
-      peopleInput.value = '1';
-    }
-
-    console.log(`bill: ${bill}`);
-    console.log(`selected %: ${selectedPercent}`);
-    console.log(`Number of People: ${numOfPeople}`);
-    console.log(`TotalTip: ${tip}`);
-    console.log(`tip person: ${tipPerPerson}`);
-  });
 
   buttonContainer.appendChild(percent);
 }
@@ -237,11 +210,3 @@ mainElement.append(logo);
 mainElement.appendChild(mainContainer);
 
 document.body.appendChild(mainElement);
-
-//The math
-
-//tip amount person
-//(bill * selected %) / people
-
-//total amount person
-//(bill / people) + tip
