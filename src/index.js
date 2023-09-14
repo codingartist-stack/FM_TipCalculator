@@ -15,9 +15,11 @@ logo.src = svgLogo;
 
 const dollarSign = new Image();
 dollarSign.src = dollarIcon;
+dollarSign.classList.add('icon');
 
 const iconPerson = new Image();
 iconPerson.src = personIcon;
+iconPerson.classList.add('icon');
 
 //inputSection
 

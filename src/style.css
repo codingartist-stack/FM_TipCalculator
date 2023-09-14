@@ -109,8 +109,16 @@ body {
 
 main {
   background-color: var(--clr-neutralWhite);
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 20px;
+
+  display: grid;
+  gap: 2rem;
+}
+
+.gridGroup {
+  display: grid;
+  gap: 2rem;
 }
 
 label {
@@ -128,31 +136,37 @@ p:last-child {
   font-size: 0.75rem;
 }
 
-.inputDiv,
-.customPercent {
+.inputDiv {
+  display: grid;
+  font-size: 1.5rem;
+  width: 100%;
   position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items: center;
+}
+
+.buttonContainer {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.customPercent {
+  width: 100%;
+}
+
+.customPercent,
+.numberInput {
   padding: 0.5rem;
   padding-left: 1rem;
   background-color: var(--clr-neutral300);
   border-radius: 5px;
   border: none;
-}
-
-.customPercent {
   text-align: right;
 }
 
-.numberInput {
-  border: none;
-  background-color: transparent;
-  font-size: 1.5rem;
-  text-align: right;
-  color: var(--clr-neutral800);
-  max-width: 80%;
+.icon {
+  position: absolute;
+  top: 35%;
+  left: 15px;
 }
 
 input::placeholder {
@@ -161,6 +175,8 @@ input::placeholder {
 
 .resultContainer {
   background-color: var(--clr-neutral800);
+  padding: 1.5rem;
+  border-radius: 15px;
 }
 
 .total {
