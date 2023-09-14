@@ -13,12 +13,9 @@ export default function calculateTipTotal(bill, selectedPercent, numOfPeople) {
   let totalBill = parseInt(bill) + parseInt(tip);
 
   let tipPerPerson = parseInt(tip) / numOfPeople;
-  console.log(`Tip per Person: ${tipPerPerson}`);
 
   let totalPerPerson = totalBill / numOfPeople;
 
-  console.log(`Total perPerson: ${totalPerPerson}`);
-
-  personTotal.innerText = `$${tipPerPerson}`;
-  total.innerText = `$${totalPerPerson}`;
+  personTotal.innerText = `$${tipPerPerson.toFixed(2)}`;
+  total.innerText = `$${totalPerPerson.toFixed(2)}`;
 }
