@@ -70,8 +70,8 @@ function createPercent(percent, numPercent) {
   percent = document.createElement('input');
   percent.classList.add('percentBtn');
   percent.type = 'button';
-  percent.name = percent;
-  percent.id = percent;
+  percent.name = 'percent';
+  percent.id = 'percent';
   percent.value = numPercent;
 
   percent.setAttribute('data-selected', false);
@@ -82,6 +82,7 @@ function createPercent(percent, numPercent) {
     let bill = billInput.value;
     let selectedPercent = parseInt(e.target.value) / 100;
     let numOfPeople = peopleInput.value;
+
     if (bill == '') {
       console.log('hmm...');
       return;
@@ -111,6 +112,10 @@ customPercent.addEventListener('input', (e) => {
   let selectedPercent = parseInt(customPercent.value) / 100;
   let numOfPeople = peopleInput.value;
 
+  if (bill == '') {
+    console.log('hmm...');
+    return;
+  }
   if (numOfPeople == '') {
     numOfPeople = 1;
     peopleInput.value = 1;
@@ -129,6 +134,8 @@ const numPeopleContainer = document.createElement('div');
 numPeopleContainer.classList.add('numPeopleContainer');
 
 const labelErrorDiv = document.createElement('div');
+labelErrorDiv.classList.add('labelErrorDiv');
+
 const peopleInputDiv = document.createElement('div');
 peopleInputDiv.classList.add('inputDiv');
 
@@ -153,11 +160,17 @@ labelErrorDiv.appendChild(errorSpan);
 peopleInputDiv.appendChild(peopleInput);
 peopleInputDiv.appendChild(iconPerson);
 
-function notZero() {
-  if (peopleInput > 1) {
+peopleInput.addEventListener('input', (e) => {
+  if (peopleInput.value < 1) {
     errorSpan.innerText = `Can't be zero`;
+    peopleInput.classList.add('errorBorder');
+    return;
   }
-}
+  if (bill == '') {
+    console.log('hmm...');
+    return;
+  }
+});
 
 numPeopleContainer.appendChild(labelErrorDiv);
 numPeopleContainer.appendChild(peopleInputDiv);

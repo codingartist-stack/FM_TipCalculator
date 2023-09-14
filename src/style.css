@@ -8,6 +8,8 @@
   --clr-neutral500: hsl(186, 14%, 43%);
   --clr-neutral800: hsl(183, 100%, 15%);
 
+  --clr-error: hsl(24, 93%, 38%);
+
   --fontFamily-main: 'SpaceMono-Regular', 'Courier New', Courier, monospace;
   --fontFamily-Bold: 'SpaceMono-Bold', 'Courier New', Courier, monospace;
 }
@@ -114,7 +116,7 @@ body {
 
 main {
   display: grid;
-  gap: 2rem;
+  gap: 2.5rem;
   place-items: center;
 }
 
@@ -133,7 +135,7 @@ main {
 }
 
 label {
-  color: var(--clr-neutral500);
+  color: var(--clr-neutral400);
   font-family: var(--fontFamily-Bold);
 }
 
@@ -152,6 +154,10 @@ input {
   font-family: var(--fontFamily-Bold);
 }
 
+input:focus {
+  outline: 2px solid var(--clr-primary300);
+}
+
 .inputDiv {
   display: grid;
   width: 100%;
@@ -168,7 +174,7 @@ input {
 .numberInput {
   padding: 0.5rem;
   padding-left: 1rem;
-  background-color: var(--clr-neutral300);
+  background-color: var(--clr-neutral200);
   border-radius: 5px;
   border: none;
   text-align: right;
@@ -185,6 +191,11 @@ input::placeholder {
   color: var(--clr-neutral400);
 }
 
+.labelErrorDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
 .resultContainer {
   background-color: var(--clr-neutral800);
   padding: 1.5rem;
@@ -195,4 +206,14 @@ input::placeholder {
   color: var(--clr-primary300);
   font-family: var(--fontFamily-Bold);
   font-size: 2rem;
+}
+
+.errorMessage {
+  color: var(--clr-error);
+  font-family: var(--fontFamily-Bold);
+}
+
+.errorBorder,
+.errorBorder:focus {
+  outline: 2px solid var(--clr-error);
 }
