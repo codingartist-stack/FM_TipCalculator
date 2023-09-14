@@ -134,14 +134,62 @@ resultContainer.classList.add('gridGroup');
 
 const tipAmountContainer = document.createElement('div');
 tipAmountContainer.classList.add('tipAmountContainer');
-tipAmountContainer.classList.add('flexGroup');
 
-const tipAmount = document.createElement('p');
-tipAmount.innerText = 'Tip Amount';
+//Person total
+const personTotalContainer = document.createElement('div');
+personTotalContainer.classList.add('flexGroup');
 
-tipAmountContainer.appendChild(tipAmount);
+const personTitle = document.createElement('div');
 
+const personTip = document.createElement('p');
+personTip.innerText = 'Tip Amount';
+
+const perPerson = document.createElement('p');
+perPerson.innerText = '/ person';
+
+personTitle.appendChild(personTip);
+personTitle.appendChild(perPerson);
+
+const personTotal = document.createElement('div');
+personTotal.classList.add('total');
+personTotal.innerText = '$0.00';
+
+personTotalContainer.appendChild(personTitle);
+personTotalContainer.appendChild(personTotal);
+
+//total
+const totalContainer = document.createElement('div');
+totalContainer.classList.add('flexGroup');
+
+const totalTitle = document.createElement('div');
+
+const totalLabel = document.createElement('p');
+totalLabel.innerText = 'Total';
+
+const perPersonTotal = document.createElement('p');
+perPersonTotal.innerText = '/ person';
+
+totalTitle.appendChild(totalLabel);
+totalTitle.appendChild(perPersonTotal);
+
+const total = document.createElement('div');
+total.classList.add('total');
+total.innerText = '$0.00';
+
+totalContainer.appendChild(totalTitle);
+totalContainer.appendChild(total);
+
+tipAmountContainer.appendChild(personTotalContainer);
+tipAmountContainer.appendChild(totalContainer);
 resultContainer.appendChild(tipAmountContainer);
+
+//Reset Button
+
+const resetBtn = document.createElement('button');
+resetBtn.innerText = 'RESET';
+resetBtn.classList.add('resetBtn');
+
+resultContainer.appendChild(resetBtn);
 
 // Main Append
 

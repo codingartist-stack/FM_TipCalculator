@@ -118,6 +118,16 @@ label {
   font-family: var(--fontFamily-Bold);
 }
 
+p:first-child {
+  color: var(--clr-neutralWhite);
+  font-family: var(--fontFamily-Bold);
+}
+
+p:last-child {
+  color: var(--clr-neutral300);
+  font-size: 0.75rem;
+}
+
 .inputDiv,
 .customPercent {
   position: relative;
@@ -147,4 +157,14 @@ label {
 
 input::placeholder {
   color: var(--clr-neutral400);
+}
+
+.resultContainer {
+  background-color: var(--clr-neutral800);
+}
+
+.total {
+  color: var(--clr-primary300);
+  font-family: var(--fontFamily-Bold);
+  font-size: 2rem;
 }
