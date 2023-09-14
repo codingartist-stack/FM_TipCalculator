@@ -4,7 +4,9 @@ import svgLogo from './images/logo.svg';
 import dollarIcon from './images/icon-dollar.svg';
 import personIcon from './images/icon-person.svg';
 
-const mainContainer = document.createElement('main');
+const mainElement = document.createElement('main');
+const mainContainer = document.createElement('div');
+mainContainer.classList.add('mainContainer');
 const calculatorContainer = document.createElement('form');
 calculatorContainer.classList.add('calculatorContainer');
 
@@ -194,9 +196,10 @@ resetBtn.classList.add('resetBtn');
 resultContainer.appendChild(resetBtn);
 
 // Main Append
-
 mainContainer.appendChild(calculatorContainer);
 mainContainer.appendChild(resultContainer);
 
-document.body.append(logo);
-document.body.appendChild(mainContainer);
+mainElement.append(logo);
+mainElement.appendChild(mainContainer);
+
+document.body.appendChild(mainElement);
