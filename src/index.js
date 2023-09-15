@@ -61,7 +61,6 @@ billInput.addEventListener('change', (e) => {
   let selectedPercent;
 
   buttonContainer.childNodes.forEach((node) => {
-    console.log(node.dataset.selected);
     if (node.dataset.selected == 'true') {
       selectedPercent = parseFloat(node.value) / 100;
     }
@@ -179,7 +178,6 @@ peopleInput.addEventListener('change', (e) => {
   let selectedPercent;
 
   buttonContainer.childNodes.forEach((node) => {
-    console.log(node.dataset.selected);
     if (node.dataset.selected == 'true') {
       selectedPercent = parseFloat(node.value) / 100;
     }
