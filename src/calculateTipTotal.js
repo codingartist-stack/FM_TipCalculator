@@ -17,6 +17,7 @@ export default function calculateTipTotal(bill, selectedPercent, numOfPeople) {
     numOfPeople = 1;
     peopleInput.value = 1;
   }
+
   let tip = bill * selectedPercent;
 
   let totalBill = parseFloat(bill) + parseFloat(tip);

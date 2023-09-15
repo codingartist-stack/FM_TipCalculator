@@ -55,6 +55,25 @@ billInputDiv.appendChild(dollarSign);
 billContainer.appendChild(billLabel);
 billContainer.appendChild(billInputDiv);
 
+billInput.addEventListener('change', (e) => {
+  let bill = billInput.value;
+  let numOfPeople = peopleInput.value;
+  let selectedPercent;
+
+  buttonContainer.childNodes.forEach((node) => {
+    console.log(node.dataset.selected);
+    if (node.dataset.selected == 'true') {
+      selectedPercent = parseFloat(node.value) / 100;
+    }
+  });
+
+  calculateTipTotal(bill, selectedPercent, numOfPeople);
+
+  if (bill == '' || bill == 0) {
+    resetForm();
+  }
+});
+
 //Tip
 const tipContainer = document.createElement('div');
 tipContainer.classList.add('tipContainer');
@@ -80,8 +99,7 @@ function createPercent(percent, numPercent) {
 
   percent.addEventListener('click', (e) => {
     let bill = billInput.value;
-    let selectedPercent = parseInt(e.target.value) / 100;
-    console.log(`selected percent: ${selectedPercent}`);
+    let selectedPercent = parseFloat(e.target.value) / 100;
     let numOfPeople = peopleInput.value;
 
     buttonContainer.childNodes.forEach((button) =>
@@ -107,7 +125,7 @@ customPercent.setAttribute('data-selected', false);
 
 customPercent.addEventListener('input', (e) => {
   let bill = billInput.value;
-  let selectedPercent = parseInt(customPercent.value) / 100;
+  let selectedPercent = parseFloat(customPercent.value) / 100;
 
   let numOfPeople = peopleInput.value;
 
@@ -155,9 +173,17 @@ labelErrorDiv.appendChild(errorSpan);
 peopleInputDiv.appendChild(peopleInput);
 peopleInputDiv.appendChild(iconPerson);
 
-peopleInput.addEventListener('input', (e) => {
+peopleInput.addEventListener('change', (e) => {
   let bill = billInput.value;
   let numOfPeople = peopleInput.value;
+  let selectedPercent;
+
+  buttonContainer.childNodes.forEach((node) => {
+    console.log(node.dataset.selected);
+    if (node.dataset.selected == 'true') {
+      selectedPercent = parseFloat(node.value) / 100;
+    }
+  });
 
   if (numOfPeople < 1) {
     errorSpan.innerText = `Can't be zero`;
@@ -167,6 +193,8 @@ peopleInput.addEventListener('input', (e) => {
     errorSpan.innerText = '';
     peopleInput.classList.remove('errorBorder');
   }
+
+  calculateTipTotal(bill, selectedPercent, numOfPeople);
 });
 
 numPeopleContainer.appendChild(labelErrorDiv);
