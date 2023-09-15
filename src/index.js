@@ -170,7 +170,7 @@ peopleInput.classList.add('numberInput');
 peopleInput.type = 'number';
 peopleInput.name = 'people';
 peopleInput.id = 'people';
-peopleInput.min = '0';
+peopleInput.min = '1';
 
 labelErrorDiv.appendChild(peopleLabel);
 labelErrorDiv.appendChild(errorSpan);
