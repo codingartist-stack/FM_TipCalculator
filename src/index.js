@@ -55,7 +55,7 @@ billInputDiv.appendChild(dollarSign);
 billContainer.appendChild(billLabel);
 billContainer.appendChild(billInputDiv);
 
-billInput.addEventListener('change', (e) => {
+billInput.addEventListener('input', (e) => {
   let bill = billInput.value;
   let numOfPeople = peopleInput.value;
   let selectedPercent;
@@ -65,6 +65,10 @@ billInput.addEventListener('change', (e) => {
       selectedPercent = parseFloat(node.value) / 100;
     }
   });
+
+  if (selectedPercent == undefined) {
+    return;
+  }
 
   calculateTipTotal(bill, selectedPercent, numOfPeople);
 
@@ -172,7 +176,7 @@ labelErrorDiv.appendChild(errorSpan);
 peopleInputDiv.appendChild(peopleInput);
 peopleInputDiv.appendChild(iconPerson);
 
-peopleInput.addEventListener('change', (e) => {
+peopleInput.addEventListener('input', (e) => {
   let bill = billInput.value;
   let numOfPeople = peopleInput.value;
   let selectedPercent;
