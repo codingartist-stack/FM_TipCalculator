@@ -129,9 +129,22 @@ main {
   gap: 2rem;
 }
 
+@media screen and (min-width: 60rem) {
+  .mainContainer {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60rem;
+  }
+}
+
 .gridGroup {
   display: grid;
   gap: 2rem;
+}
+
+.flexGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
 }
 
 .icon {
@@ -172,6 +185,12 @@ input {
   grid-template-columns: repeat(2, 1fr);
 }
 
+@media screen and (min-width: 50rem) {
+  .buttonContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .customPercent,
 .numberInput {
   padding: 0.5rem;
@@ -203,6 +222,7 @@ input::placeholder {
 }
 
 .percentBtn:focus,
+.percentBtn:hover,
 .percentBtn[data-selected='true'] {
   background-color: var(--clr-neutral300);
   color: var(--clr-neutral800);
@@ -210,8 +230,28 @@ input::placeholder {
 
 .resultContainer {
   background-color: var(--clr-neutral800);
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 15px;
+}
+
+.tipAmountContainer {
+  display: grid;
+  align-items: center;
+}
+
+.resetBtn {
+  font-family: var(--fontFamily-Bold);
+  background-color: var(--clr-neutral300);
+  color: var(--clr-neutral800);
+  align-self: end;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem;
+}
+
+.resetBtn:hover {
+  background-color: var(--clr-neutral200);
+  /* color: var(--clr-neutralWhite); */
 }
 
 .total {
