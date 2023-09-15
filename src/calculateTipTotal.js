@@ -1,4 +1,4 @@
-import { personTotal, total } from '.';
+import { personTotal, peopleInput, total } from '.';
 
 //The math
 
@@ -18,9 +18,10 @@ export default function calculateTipTotal(bill, selectedPercent, numOfPeople) {
     peopleInput.value = 1;
   }
   let tip = bill * selectedPercent;
-  let totalBill = parseInt(bill) + parseInt(tip);
 
-  let tipPerPerson = parseInt(tip) / numOfPeople;
+  let totalBill = parseFloat(bill) + parseFloat(tip);
+
+  let tipPerPerson = parseFloat(tip) / parseFloat(numOfPeople);
 
   let totalPerPerson = totalBill / numOfPeople;
 

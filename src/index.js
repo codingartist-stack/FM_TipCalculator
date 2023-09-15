@@ -81,7 +81,13 @@ function createPercent(percent, numPercent) {
   percent.addEventListener('click', (e) => {
     let bill = billInput.value;
     let selectedPercent = parseInt(e.target.value) / 100;
+    console.log(`selected percent: ${selectedPercent}`);
     let numOfPeople = peopleInput.value;
+
+    buttonContainer.childNodes.forEach((button) =>
+      button.setAttribute('data-selected', false)
+    );
+    e.target.setAttribute('data-selected', true);
 
     calculateTipTotal(bill, selectedPercent, numOfPeople);
   });
@@ -97,11 +103,18 @@ const customPercent = document.createElement('input');
 customPercent.type = 'number';
 customPercent.classList.add('customPercent');
 customPercent.setAttribute('placeholder', 'Custom');
+customPercent.setAttribute('data-selected', false);
 
 customPercent.addEventListener('input', (e) => {
   let bill = billInput.value;
   let selectedPercent = parseInt(customPercent.value) / 100;
+
   let numOfPeople = peopleInput.value;
+
+  buttonContainer.childNodes.forEach((button) =>
+    button.setAttribute('data-selected', false)
+  );
+  customPercent.setAttribute('data-selected', true);
 
   calculateTipTotal(bill, selectedPercent, numOfPeople);
 });
@@ -129,7 +142,7 @@ const errorSpan = document.createElement('span');
 errorSpan.classList.add('errorMessage');
 errorSpan.id = 'errorSpan';
 
-const peopleInput = document.createElement('input');
+export const peopleInput = document.createElement('input');
 peopleInput.setAttribute('placeholder', '0');
 peopleInput.classList.add('numberInput');
 peopleInput.type = 'number';
