@@ -83,15 +83,6 @@ function createPercent(percent, numPercent) {
     let selectedPercent = parseInt(e.target.value) / 100;
     let numOfPeople = peopleInput.value;
 
-    if (bill == '') {
-      console.log('hmm...');
-      return;
-    }
-    if (numOfPeople == '') {
-      numOfPeople = 1;
-      peopleInput.value = 1;
-    }
-
     calculateTipTotal(bill, selectedPercent, numOfPeople);
   });
 }
@@ -111,15 +102,6 @@ customPercent.addEventListener('input', (e) => {
   let bill = billInput.value;
   let selectedPercent = parseInt(customPercent.value) / 100;
   let numOfPeople = peopleInput.value;
-
-  if (bill == '') {
-    console.log('hmm...');
-    return;
-  }
-  if (numOfPeople == '') {
-    numOfPeople = 1;
-    peopleInput.value = 1;
-  }
 
   calculateTipTotal(bill, selectedPercent, numOfPeople);
 });
@@ -171,10 +153,6 @@ peopleInput.addEventListener('input', (e) => {
   } else {
     errorSpan.innerText = '';
     peopleInput.classList.remove('errorBorder');
-  }
-  if (bill == '') {
-    console.log('hmm...');
-    return;
   }
 });
 

@@ -180,6 +180,7 @@ input {
 .customPercent:focus,
 .numberInput:focus {
   outline: 2px solid var(--clr-primary300);
+  color: var(--clr-neutral800);
 }
 
 .icon {
