@@ -48,6 +48,7 @@ billInput.classList.add('numberInput');
 billInput.type = 'number';
 billInput.name = 'bill';
 billInput.id = 'bill';
+billInput.min = '0';
 
 billInputDiv.appendChild(billInput);
 billInputDiv.appendChild(dollarSign);
@@ -169,6 +170,7 @@ peopleInput.classList.add('numberInput');
 peopleInput.type = 'number';
 peopleInput.name = 'people';
 peopleInput.id = 'people';
+peopleInput.min = '0';
 
 labelErrorDiv.appendChild(peopleLabel);
 labelErrorDiv.appendChild(errorSpan);

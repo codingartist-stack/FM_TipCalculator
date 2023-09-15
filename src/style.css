@@ -193,7 +193,16 @@ input::placeholder {
   color: var(--clr-neutral400);
 }
 
-.percentBtn:focus {
+.percentBtn {
+  border-radius: 5px;
+  padding: 0.5rem;
+  border: none;
+  color: var(--clr-neutralWhite);
+  background-color: var(--clr-neutral800);
+}
+
+.percentBtn:focus,
+.percentBtn[data-selected='true'] {
   background-color: var(--clr-neutral300);
   color: var(--clr-neutral800);
 }
