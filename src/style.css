@@ -134,6 +134,12 @@ main {
   gap: 2rem;
 }
 
+.icon {
+  position: absolute;
+  top: 35%;
+  left: 15px;
+}
+
 label {
   color: var(--clr-neutral400);
   font-family: var(--fontFamily-Bold);
@@ -171,6 +177,7 @@ input {
   padding: 0.5rem;
   padding-left: 1rem;
   background-color: var(--clr-neutral200);
+  color: var(--clr-neutral800);
   border-radius: 5px;
   border: none;
   text-align: right;
@@ -181,12 +188,6 @@ input {
 .numberInput:focus {
   outline: 2px solid var(--clr-primary300);
   color: var(--clr-neutral800);
-}
-
-.icon {
-  position: absolute;
-  top: 35%;
-  left: 15px;
 }
 
 input::placeholder {
@@ -207,11 +208,6 @@ input::placeholder {
   color: var(--clr-neutral800);
 }
 
-.labelErrorDiv {
-  display: flex;
-  justify-content: space-between;
-}
-
 .resultContainer {
   background-color: var(--clr-neutral800);
   padding: 1.5rem;
@@ -222,6 +218,12 @@ input::placeholder {
   color: var(--clr-primary300);
   font-family: var(--fontFamily-Bold);
   font-size: 2rem;
+}
+
+/* ERROR */
+.labelErrorDiv {
+  display: flex;
+  justify-content: space-between;
 }
 
 .errorMessage {

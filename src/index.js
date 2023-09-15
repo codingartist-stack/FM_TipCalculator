@@ -198,6 +198,9 @@ peopleInput.addEventListener('input', (e) => {
     peopleInput.classList.remove('errorBorder');
   }
 
+  if (selectedPercent == undefined) {
+    return;
+  }
   calculateTipTotal(bill, selectedPercent, numOfPeople);
 });
 
@@ -279,6 +282,10 @@ function resetForm() {
   calculatorContainer.reset();
   personTotal.innerText = '$0.00';
   total.innerText = '$0.00';
+
+  buttonContainer.childNodes.forEach((button) =>
+    button.setAttribute('data-selected', false)
+  );
 }
 
 resetBtn.addEventListener('click', resetForm);
